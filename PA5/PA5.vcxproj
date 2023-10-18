@@ -131,12 +131,14 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="QueueNode.cpp" />
+    <ClCompile Include="QueueSim.cpp" />
     <ClCompile Include="TestClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Data.hpp" />
     <ClInclude Include="Queue.hpp" />
     <ClInclude Include="QueueNode.hpp" />
+    <ClInclude Include="QueueSim.hpp" />
     <ClInclude Include="TestClass.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

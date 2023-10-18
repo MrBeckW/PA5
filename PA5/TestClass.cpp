@@ -2,9 +2,9 @@
 
 TestClass::TestClass()
 {
-	this->testCustomerNumber = 0;
-	this->testServiceTime = 0;
-	this->testTotalTime = 0;
+	this->testCustomerNumber = 333;
+	this->testServiceTime = 222;
+	this->testTotalTime = 111;
 }
 
 /// <summary>
@@ -23,7 +23,7 @@ void TestClass::testEnqueueEmpty(void)
 		{
 			if (this->mEmptyQueue.getmpHead() == this->mEmptyQueue.getmpTail())
 			{
-				std::cout << "Test Success\n";
+				std::cout << "Test Passed!\n";
 			}
 			else
 			{
@@ -58,7 +58,7 @@ void TestClass::testEnqueueOneNode(void)
 	{
 		if (this->mEmptyQueue.getmpHead()->getpNext() == this->mEmptyQueue.getmpTail())
 		{
-			std::cout << "Test Success";
+			std::cout << "Test Passed!\n";
 		}
 		else
 		{
@@ -71,10 +71,72 @@ void TestClass::testEnqueueOneNode(void)
 	}
 }
 
+/// <summary>
+/// PRECONDITION: testEnqueueEmpty, testEnqueueOneNode and testDequeueTwoNodes all must pass
+/// tests the Dequeue function with a queue with a single node
+/// </summary>
+/// <param name="">void</param>
 void TestClass::testDequeueOneNode(void)
 {
+	std::cout << "--DEQUEUE TEST ON QUEUE WITH ONE NODE--\n";
+
+	Data pTestData = this->mEmptyQueue.dequeue();
+
+	if (mEmptyQueue.getmpHead() == nullptr)
+	{
+		if (mEmptyQueue.getmpTail() == nullptr)
+		{
+			if (pTestData.getCustomerNumber() == this->testCustomerNumber)
+			{
+				std::cout << "Test Passed!\n";
+			}
+			else
+			{
+				std::cout << "Test Failed, Data did not return correctly\n";
+			}
+		}
+		else
+		{
+			std::cout << "Test Failed, Tail pointer not nullptr\n";
+		}
+	}
+	else
+	{
+		std::cout << "Test Failed, Head pointer not nullptr\n";
+	}
 }
 
+/// <summary>
+/// PRECONDITION: testEnqueueEmpty and testEnqueueOneNode must pass
+/// tests dequeue function with a queue with two nodes
+/// </summary>
+/// <param name=""></param>
 void TestClass::testDequeueTwoNodes(void)
 {
+	std::cout << "--DEQUEUE TEST ON QUEUE WITH TWO NODES--\n";
+
+	Data pTestData = this->mEmptyQueue.dequeue();
+
+	if (mEmptyQueue.getmpHead() != nullptr)
+	{
+		if (mEmptyQueue.getmpHead() == mEmptyQueue.getmpTail())
+		{
+			if (pTestData.getCustomerNumber() == this->testCustomerNumber)
+			{
+				std::cout << "Test Passed!\n";
+			}
+			else
+			{
+				std::cout << "Test Failed, Data did not return correctly\n";
+			}
+		}
+		else
+		{
+			std::cout << "Test Failed, Head pointer not updated correctly\n";
+		}
+	}
+	else
+	{
+		std::cout << "Test Failed, Head pointer set to nullptr\n";
+	}
 }

@@ -6,14 +6,23 @@
 /// <param name="newCustomerNumber">int customer number</param>
 /// <param name="newServiceTime">int service time</param>
 /// <param name="newTotalTime">int total time</param>
-QueueNode::QueueNode(const int newCustomerNumber, const int newServiceTime, const int newTotalTime)
+QueueNode::QueueNode(const int newCustomerNumber, const int newServiceTime, const int newTotalTime, const int newArrivalTime)
 {
-	this->mpData = createData(newCustomerNumber, newServiceTime, newTotalTime);
+	this->mpData = createData(newCustomerNumber, newServiceTime, newTotalTime, newArrivalTime);
 	this->mpNext = nullptr;
 	if (mpData == nullptr)
 	{
 		std::cout << "Failed to allocate memory for Data!";
 	}
+}
+
+
+/// <summary>
+/// destructor for QueueNode, frees allocated memory for Data member
+/// </summary>
+QueueNode::~QueueNode()
+{
+	delete this->mpData;
 }
 
 /// <summary>
@@ -50,9 +59,9 @@ void QueueNode::setmpNext(QueueNode* nextNode)
 /// <param name="newServiceTime">int service time</param>
 /// <param name="newTotalTime">int total time</param>
 /// <returns>pointer to created Data class</returns>
-Data* QueueNode::createData(const int newCustomerNumber, const int newServiceTime, const int newTotalTime)
+Data* QueueNode::createData(const int newCustomerNumber, const int newServiceTime, const int newTotalTime, const int newArrivalTime)
 {
-	Data* pMem = new Data(newCustomerNumber, newServiceTime, newTotalTime);
+	Data* pMem = new Data(newCustomerNumber, newServiceTime, newTotalTime, newArrivalTime);
 
 	return pMem;
 }

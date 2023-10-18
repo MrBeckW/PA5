@@ -7,11 +7,24 @@
 /// <param name="newCustomerNumber">int customer number</param>
 /// <param name="newServiceTime">int service time</param>
 /// <param name="newTotalTime">int total time</param>
-Data::Data(const int newCustomerNumber, const int newServiceTime, const int newTotalTime)
+Data::Data(const int newCustomerNumber, const int newServiceTime, const int newTotalTime, const int newArrivalTime)
 {
 	this->mCustomerNumber = newCustomerNumber;
 	this->mServiceTime = newServiceTime;
 	this->mTotalTime = newTotalTime;
+	this->ArrivalTime = newArrivalTime;
+}
+
+/// <summary>
+/// copy constructor for Data
+/// </summary>
+/// <param name="newData">Data class to be copied</param>
+Data::Data(const Data& newData)
+{
+	this->mCustomerNumber = newData.mCustomerNumber;
+	this->mServiceTime = newData.mServiceTime;
+	this->mTotalTime = newData.mTotalTime;
+	this->ArrivalTime = newData.ArrivalTime;
 }
 
 /// <summary>
@@ -39,4 +52,13 @@ int Data::getServiceNumber()
 int Data::getTotalTime()
 {
 	return this->mTotalTime;
+}
+
+/// <summary>
+/// getter for ArrivalTime
+/// </summary>
+/// <returns>ArrivalTime</returns>
+int Data::getArrivalTime()
+{
+	return ArrivalTime;
 }
