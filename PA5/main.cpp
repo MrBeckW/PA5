@@ -1,16 +1,21 @@
+////////////////////
+// Beck Williams
+// PA 5
+// CptS 122
+////////////////////
+
+
 #include "QueueSim.hpp"
 #include "TestClass.hpp"
 
 
 int main()
 {
-	/*TestClass test;
+	TestClass test;
 	test.testEnqueueEmpty();
 	test.testEnqueueOneNode();
 	test.testDequeueTwoNodes();
-	test.testDequeueOneNode();*/
-
-	QueueSim qSim;
-
-	qSim.runSim();
+	test.testDequeueOneNode();
+	test.testSim();
+	
 }

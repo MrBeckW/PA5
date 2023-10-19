@@ -24,6 +24,8 @@ void Queue::enqueue(const int newCustomerNumber, const int newServiceTime, const
 
 	if (pMem != nullptr && pMem->getData() != nullptr)//checks if memory was correctly allocated for both data and node
 	{
+		pMem->getData()->setServicetime(pMem->getNumItems());//scales the service time
+
 		if (this->mpHead == nullptr)//inserts into an empty queue
 		{
 			mpHead = pMem;
@@ -35,6 +37,7 @@ void Queue::enqueue(const int newCustomerNumber, const int newServiceTime, const
 			mpTail = pMem;
 			
 		}
+		
 	}
 	else
 	{
@@ -84,6 +87,27 @@ bool Queue::isEmpty()
 		success = true;
 	}
 	return success;
+}
+
+/// <summary>
+/// function that prints the queue
+/// </summary>
+void Queue::printQueue()
+{
+	QueueNode* pCur = mpHead;
+	
+	if (pCur != nullptr)
+	{
+		while (pCur != nullptr)
+		{
+			std::cout << *pCur << " -> ";
+			pCur = pCur->getpNext();
+		}
+	}
+	else
+	{
+		std::cout << "Queue Empty!" << std::endl;
+	}
 }
 
 /// <summary>

@@ -1,5 +1,5 @@
 #include "Data.hpp"
-
+#include "QueueNode.hpp"
 
 /// <summary>
 /// defualt constuctor for Data class
@@ -61,4 +61,25 @@ int Data::getTotalTime()
 int Data::getArrivalTime()
 {
 	return ArrivalTime;
+}
+
+/// <summary>
+/// function that scales the serviceTime according to the number of items in the shopping list.
+/// </summary>
+/// <param name="numItems"></param>
+void Data::setServicetime(int numItems)
+{
+	mServiceTime = numItems * 1.5;	
+}
+
+/// <summary>
+/// stream insertion for data 
+/// </summary>
+/// <param name="lhs">an ostream</param>
+/// <param name="rhs">Data class</param>
+/// <returns>ostream</returns>
+ostream& operator<<(ostream& lhs, Data& rhs)
+{
+	lhs << "| Customer number: " << rhs.getCustomerNumber() << " Arrival Time: " << rhs.getArrivalTime() << " ";
+	return lhs;
 }

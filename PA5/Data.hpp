@@ -1,5 +1,6 @@
 #pragma once
-
+#include <iostream>
+using std::ostream;
 
 class Data
 {
@@ -12,6 +13,7 @@ public:
 	int getTotalTime();
 	int getArrivalTime();
 	
+	void setServicetime(int numItems);
 private:
 	int mCustomerNumber,
 		mServiceTime,
@@ -20,3 +22,4 @@ private:
 		
 };
 
+ostream& operator<<(ostream& lhs, Data& rhs);

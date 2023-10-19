@@ -33,6 +33,12 @@
     <ClCompile Include="QueueSim.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GroceryList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TestClass.hpp">
@@ -48,6 +54,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="QueueSim.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GroceryList.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListNode.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

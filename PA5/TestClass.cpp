@@ -1,4 +1,5 @@
 #include "TestClass.hpp"
+#include "QueueSim.hpp"
 
 TestClass::TestClass()
 {
@@ -139,4 +140,15 @@ void TestClass::testDequeueTwoNodes(void)
 	{
 		std::cout << "Test Failed, Head pointer set to nullptr\n";
 	}
+}
+
+/// <summary>
+/// runs the sim for 24 hours
+/// </summary>
+/// <param name="">void</param>
+void TestClass::testSim(void)
+{
+	QueueSim qSim;
+
+	qSim.runSim(1440);//runs sim for 24 hours (1440 minutes)
 }

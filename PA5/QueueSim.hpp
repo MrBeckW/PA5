@@ -10,8 +10,9 @@ class QueueSim
 public:
 	QueueSim();
 
-	void runSim();
+	void runSim(int minutes = 0);
 	
+
 private:
 	void setSimRunTime();
 	int genRanNum(int min, int max);

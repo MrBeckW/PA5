@@ -11,6 +11,7 @@ public:
 	void testEnqueueOneNode(void);
 	void testDequeueOneNode(void);
 	void testDequeueTwoNodes(void);
+	void testSim(void);
 private:
 	Queue mEmptyQueue;
 

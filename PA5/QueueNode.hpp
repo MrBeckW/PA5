@@ -2,7 +2,9 @@
 
 #include <iostream>
 #include "Data.hpp"
+#include "GroceryList.hpp"
 
+using std::ostream;
 
 class QueueNode
 {
@@ -12,12 +14,20 @@ public:
 
 	Data* getData();
 	QueueNode* getpNext();
+	int getNumItems();
 
 	void setmpNext(QueueNode* nextNode);
+	void initializeGroceryList();
 
 private:
 	Data* createData(const int newCustomerNumber, const int newServiceTime, const int newTotalTime, const int newArrivalTime);
+	
 
 	Data* mpData;
 	QueueNode* mpNext;
+	List mGroceryList;
+	int mNumItems;
 };
+
+ostream& operator<<(ostream& rhs, QueueNode &lhs);
+int genRandomnum(int min, int max);
